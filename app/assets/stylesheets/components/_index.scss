@@ -1,4 +1,41 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
+@import "card";
 @import "navbar";
+
+.title{
+  font-size: 35px;
+  text-shadow: 0px 0px 8px whitesmoke;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.new-cocktail:hover{
+  position: relative;
+  text-shadow: 0px 0px 15px whitesmoke;
+  #bottom-bar{
+    transition: 0.9s;
+    width: 100%;
+  }
+  #top-bar{
+    width: 100%;
+    transition: 0.9s;
+
+  }
+  
+}
+  #top-bar{
+    position: absolute;
+    background-color: white;
+    width: 0;
+    height: 3px;
+    top: 0px;
+    right: 0px;
+  }
+  #bottom-bar{
+    position: absolute;
+    background-color: white;
+    width: 0%;
+    height: 3px;
+    bottom: 0px;
+    left: 0px;
+  }

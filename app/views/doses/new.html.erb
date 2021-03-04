@@ -1,0 +1,7 @@
+<div class="container col-12 col-lg-6 m-auto" style="margin-top: 50px;">
+  <%= simple_form_for([@cocktail, @dose]) do |f| %>
+  <%= f.input :description, label: "Dose" %>
+  <%= f.association :ingredient %>
+  <button type="submit" class="btn btn-secondary col-12">Add Ingredient</button>
+  <% end %>
+</div>

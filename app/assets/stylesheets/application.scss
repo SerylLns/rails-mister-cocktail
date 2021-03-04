@@ -11,3 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.required{
+  font-weight: bolder;
+  color: lightgray;
+}
+.required:first-child{
+  margin-top: 30px;
+}

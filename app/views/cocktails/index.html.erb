@@ -1,0 +1,12 @@
+
+<div class="cards m-5">
+  <% @cocktails.each do |c| %>
+  <div class="cocktail-card" data-aos="flip-left">
+  <%= link_to cocktail_path(c), style: "text-decoration: none" do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=c.image_url%>')">
+      <h4 class="card-title"><%= c.name %></h4>
+    </div>
+  <% end %>
+  </div>
+  <% end %>
+</div>
