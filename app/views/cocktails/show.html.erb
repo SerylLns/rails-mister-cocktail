@@ -1,4 +1,4 @@
-<h1 class="text-center mt-3" style="font-size: 47px; color: white;"><%= @cocktail.name %></h1>
+<h1 class=" mt-3 text-center" style="font-size: 54px; color: white;"><%= @cocktail.name %></h1>
 <div class="container-fluid row  m-auto" >
 
   <div class="card bg-secondary text-center col-12 col-lg-9 ml-3" style="max-width: 60%;">
@@ -7,10 +7,10 @@
           <%= cl_image_tag @cocktail.photo.key, class: "card-img-top img-rounded" ,crop: :fill %>
         </div>
         <div class="card-body">
-          <h4 class="card-title">Ingredient :</h4>
+          <h4 class="card-title text-center" style="font-weight bolder; font-size: 27px;">Ingredient :</h4>
     <% if !@cocktail.doses[0].nil? %>   
       <% @cocktail.doses.each do |dose| %>
-          <p class="card-text"><%= dose.description %> | <%= dose.ingredient.name%> 
+          <p style="font-weight: bolder;" class="card-text"><%= dose.description %> | <%= dose.ingredient.name%> 
           <%= link_to dose_path(dose), method: "delete", class: "delete-dose" do %>
           <i class="fas fa-times"></i> <% end %></p>
           <div id="delete"></div>
