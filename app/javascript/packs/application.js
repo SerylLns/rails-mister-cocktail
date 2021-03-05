@@ -9,7 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 import 'bootstrap';
 // import AOS from 'aos';
-import { initAos } from '../aosLib';
+import { initAos } from '../components/aosLib';
 // import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 
