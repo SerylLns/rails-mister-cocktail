@@ -5,7 +5,9 @@ class CocktailsController < ApplicationController
   end
 
   def show
-    @cocktail = Cocktail.find(params[:id])
+    cocktail = Cocktail.find(params[:id])
+    cocktail.name.capitalize!
+    @cocktail = cocktail
     @dose = Dose.new
   end
 
@@ -15,6 +17,7 @@ class CocktailsController < ApplicationController
   def create
     # params["cocktail"]["ingredient_ids"] => ingredient id
     @cocktail = Cocktail.new(cocktail_params)
+    @cocktail.name.downcase!
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
@@ -27,7 +30,6 @@ class CocktailsController < ApplicationController
     @cocktails = Cocktail.all
       .joins(:ingredients)
       .where("ingredients.name LIKE '%#{search}%'")
-    puts @cocktail
     render :index, notice: search
   end
     # @cocktails = Cocktail.select("cocktails").joins(:ingredients).where("cocktails.name LIKE '#{search}'") 

@@ -1,8 +1,11 @@
 <h1 class="text-center mt-3" style="font-size: 47px; color: white;"><%= @cocktail.name %></h1>
-<div class="container-fluid row  m-auto" style="overflow-y: hidden;">
+<div class="container-fluid row  m-auto" >
 
   <div class="card bg-secondary text-center col-12 col-lg-9 ml-3" style="max-width: 60%;">
     <div class="card-header"><%= @cocktail.name %></div>
+        <div class="card-image">
+          <%= cl_image_tag @cocktail.photo.key, class: "card-img-top img-rounded" ,crop: :fill %>
+        </div>
         <div class="card-body">
           <h4 class="card-title">Ingredient :</h4>
     <% if !@cocktail.doses[0].nil? %>   
@@ -14,10 +17,26 @@
       <% end %>
     <% end %>
     </div>
-    <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-secondary" %>
+    <%= link_to "Add review !", new_cocktail_review_path(@cocktail), class: "btn btn-secondary" %>
   </div>
-  <div class="col-12 col-lg-3 m-auto pb-3 form-dose" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="2300" style="margin-top: 50px; background-color: #BEB8B8; border-radius: 3px;">
-    <h5 class="text-center mt-2" style="color: #626262">Add Ingredient</h5>
+  <div class="card col-6 col-lg-3 m-5" data-aos="fade-left" style="background-color: #6C757D;">
+      <div class= "card-header" style="color: white; text-align: center">
+        <h4>Reviews</h4>
+      </div>
+      <ul class="list-group list-group-flush">
+        <% @cocktail.reviews.each do |review| %>
+          <li class="list-group-item ml-1 mb-3" style="border-radius: 5px; box-shadow: 0px 0px 5px white;"> 
+            <%= review.content %> 
+            <%= "⭐" * review.rating %>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+  
+
+</div>
+<div class="col-12 col-lg-5 mr-auto ml-auto mt-5 mb-4 pb-3 form-dose" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="2300" style="margin-top: 50px; background-color: #BEB8B8; border-radius: 3px;">
+    <h5 class="text-center mt-2 " style="color: #626262">Add Ingredient</h5>
     <hr>
     <%= simple_form_for([@cocktail, @dose]) do |f| %>
     <%= f.input :description, label: "Dose" %>
@@ -25,5 +44,3 @@
     <button type="submit" class="btn btn-secondary col-12">Add Ingredient</button>
     <% end %>
   </div>
-</div>
-

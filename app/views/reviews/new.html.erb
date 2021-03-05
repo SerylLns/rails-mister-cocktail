@@ -1,0 +1,7 @@
+<div class="container col-12 col-lg-8">
+  <%= simple_form_for([@cocktail, @review]) do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating %>
+    <%= f.submit class: "btn btn-info" %>
+  <% end %>
+</div>
