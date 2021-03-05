@@ -28,7 +28,7 @@ class CocktailsController < ApplicationController
       .joins(:ingredients)
       .where("ingredients.name LIKE '%#{search}%'")
     puts @cocktail
-    render :index 
+    render :index, notice: search
   end
     # @cocktails = Cocktail.select("cocktails").joins(:ingredients).where("cocktails.name LIKE '#{search}'") 
   private
