@@ -1,8 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="opacity: 1; font-family: 'Courier New', Courier, monospace; font-size: 22px;">
-  <a class="navbar-brand col-4 title" href="/cocktails">Mister Cocktails</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-aos="fade-down" style="opacity: 0.8; font-family: 'Courier New', Courier, monospace; font-size: 22px;">
+  <a class="navbar-brand col-3 title" href="/cocktails">Mister Cocktails</a>
+  <p class="col-2"><%= image_tag "iconCocktail.png", alt: "Le Wagon", width: 70 %></p>
+  
 
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
@@ -11,8 +10,8 @@
     </ul>
 
     <form class="form-inline my-2 my-lg-0" method="get" action="/find">
-      <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search">
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2 text-color-green" type="text" name="search" placeholder="Search by ingredient">
+      <button class="btn btn-secondary my-2 my-sm-0 btn-search" type="submit">Search</button>
     </form>
   </div>
 </nav>

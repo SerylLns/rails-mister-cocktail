@@ -5,4 +5,11 @@ class Cocktail < ApplicationRecord
   validates :name, presence: true
   validates :image_url, presence: true
 
+  def ingredients_names
+    result = []
+    self.ingredients.each do |ingredient|
+      result << ingredient.name
+    end
+    return result
+  end
 end

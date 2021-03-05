@@ -25,8 +25,11 @@ class CocktailsController < ApplicationController
   def find
     search = params['search'].downcase
     allcocktails = Cocktail.all
+    # @cocktail = allcocktails.select do |cocktail| 
+    #   i = cocktail.ingredients_names
+    #   i.select
+    # end 
     @cocktails = allcocktails.select {|cocktail| cocktail.name.downcase.match(search)} # Faire mieux
-    # @cocktails = Cocktail.where("name LIKE '%#{params["search"]}%'")
     render :index
   end
 
