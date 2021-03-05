@@ -3,7 +3,9 @@
   <% @cocktails.each do |c| %>
   <div class="cocktail-card" data-aos="flip-left">
   <%= link_to cocktail_path(c), style: "text-decoration: none" do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=c.image_url%>')">
+  <% if c.photo.attached? %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path c.photo.key, crop: :fill %>')">
+  <% end %>
       <h4 class="card-title"><%= c.name %></h4>
     </div>
   <% end %>
