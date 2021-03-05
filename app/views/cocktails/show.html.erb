@@ -1,7 +1,7 @@
 <h1 class="text-center mt-3" style="font-size: 47px; color: white;"><%= @cocktail.name %></h1>
-<div class="container-fluid row  m-auto">
+<div class="container-fluid row  m-auto" style="overflow-y: hidden;">
 
-  <div class="card bg-secondary text-center col-12 col-lg-9" " data-aos="fade-right" style="max-width: 60%;">
+  <div class="card bg-secondary text-center col-12 col-lg-9" style="max-width: 60%;">
     <div class="card-header"><%= @cocktail.name %></div>
         <div class="card-body">
           <h4 class="card-title">Ingredient :</h4>
@@ -16,7 +16,7 @@
     </div>
     <%= link_to "Add ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-secondary" %>
   </div>
-  <div class="col-12 col-lg-3 m-auto pb-3 form-dose" data-aos="fade-up" style="margin-top: 50px; background-color: #BEB8B8; border-radius: 3px;">
+  <div class="col-12 col-lg-3 m-auto pb-3 form-dose" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2300" style="margin-top: 50px; background-color: #BEB8B8; border-radius: 3px;">
     <h5 class="text-center mt-2" style="color: #626262">Add Ingredient</h5>
     <hr>
     <%= simple_form_for([@cocktail, @dose]) do |f| %>
