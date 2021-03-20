@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root to: 'cocktails#index'
   get "/find", to: "cocktails#find"
 
   resources :cocktails, only: [:index, :show, :new, :create,] do
